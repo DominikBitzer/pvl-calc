@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+    <TextView
+        android:id="@+id/textview_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pls_enter_parameters"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/heart_input_field_1_preejection_period"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_values"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heart_input_field_5_heartrate" />
+
+
+    <EditText
+        android:id="@+id/heart_input_field_1_preejection_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:hint="@string/hint_heart_input_field_1_preejection_period"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/heart_input_field_2_systolic_period"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+
+    <TextView
+        android:id="@+id/heart_textview_field_1_preejection_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_textview_field_1_preejection_period"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/heart_input_field_1_preejection_period"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/heart_input_field_1_preejection_period" />
+
+
+    <EditText
+        android:id="@+id/heart_input_field_2_systolic_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:hint="@string/hint_heart_input_field_2_systolic_period"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/heart_input_field_3_end_diastolic_volume"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heart_input_field_1_preejection_period" />
+
+    <TextView
+        android:id="@+id/heart_textview_field_2_systolic_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_textview_field_2_systolic_period"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/heart_input_field_2_systolic_period"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/heart_input_field_2_systolic_period" />
+
+
+    <EditText
+        android:id="@+id/heart_input_field_3_end_diastolic_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:hint="@string/hint_heart_input_field_3_end_diastolic_volume"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/heart_input_field_4_diastolic_bloodpressure"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heart_input_field_2_systolic_period" />
+
+    <TextView
+        android:id="@+id/heart_textview_field_3_end_diastolic_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_textview_field_3_end_diastolic_volume"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/heart_input_field_3_end_diastolic_volume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/heart_input_field_3_end_diastolic_volume" />
+
+
+    <EditText
+        android:id="@+id/heart_input_field_4_diastolic_bloodpressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:hint="@string/hint_heart_input_field_4_diastolic_bloodpressure"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/heart_input_field_5_heartrate"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heart_input_field_3_end_diastolic_volume" />
+
+    <TextView
+        android:id="@+id/heart_textview_field_4_diastolic_bloodpressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_textview_field_4_diastolic_bloodpressure"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/heart_input_field_4_diastolic_bloodpressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/heart_input_field_4_diastolic_bloodpressure" />
+
+
+    <EditText
+        android:id="@+id/heart_input_field_5_heartrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:hint="@string/hint_heart_input_field_5_heartrate"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heart_input_field_4_diastolic_bloodpressure" />
+
+    <TextView
+        android:id="@+id/heart_textview_field_5_heartrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heart_textview_field_5_heartrate"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/heart_input_field_5_heartrate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/heart_input_field_5_heartrate" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Pressure-Volume Loop Calculator</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Input of data</string>
+    <string name="second_fragment_label">Analysis of data</string>
+    <string name="calculate_values">Analyze</string>
+    <string name="previous">Previous</string>
+
+    <string name="pls_enter_parameters">Please enter the parameters:</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="heart_textview_field_1_preejection_period">Pre-ejection period \n left ventricular \n outflow tract (msec)</string>
+    <string name="heart_textview_field_2_systolic_period">Total systolic period \n left ventricular \n outflow tract (msec)</string>
+    <string name="heart_textview_field_3_end_diastolic_volume">End-diastolic volume (mL) and \n end-systolic volume (mL)</string>
+    <string name="heart_textview_field_4_diastolic_bloodpressure">Systolic (SBP, mmHg) \n and diastolic blood \n pressure (DBP, mmHg)</string>
+    <string name="heart_textview_field_5_heartrate">Heart rate (bpm)</string>
+
+
+    <string name="hint_heart_input_field_1_preejection_period">test</string>
+    <string name="hint_heart_input_field_2_systolic_period">test</string>
+    <string name="hint_heart_input_field_3_end_diastolic_volume">test</string>
+    <string name="hint_heart_input_field_4_diastolic_bloodpressure">test</string>
+    <string name="hint_heart_input_field_5_heartrate">test</string>
+</resources>
