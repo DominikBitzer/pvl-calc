@@ -18,9 +18,11 @@
     <string name="heart_textview_field_5_heartrate">Heart rate (bpm)</string>
 
 
-    <string name="hint_heart_input_field_1_preejection_period">test</string>
-    <string name="hint_heart_input_field_2_systolic_period">test</string>
-    <string name="hint_heart_input_field_3_end_diastolic_volume">test</string>
-    <string name="hint_heart_input_field_4_diastolic_bloodpressure">test</string>
-    <string name="hint_heart_input_field_5_heartrate">test</string>
+    <string name="hint_heart_input_field_1_preejection_period">(msec)</string>
+    <string name="hint_heart_input_field_2_systolic_period">(msec)</string>
+    <string name="hint_heart_input_field_3a_end_diastolic_volume">End-dia.</string>
+    <string name="hint_heart_input_field_3b_end_diastolic_volume">End-sys.</string>
+    <string name="hint_heart_input_field_4a_diastolic_bloodpressure">SBP (mmHg)</string>
+    <string name="hint_heart_input_field_4b_diastolic_bloodpressure">DBP (mmHg)</string>
+    <string name="hint_heart_input_field_5_heartrate">(bpm)</string>
 </resources>
