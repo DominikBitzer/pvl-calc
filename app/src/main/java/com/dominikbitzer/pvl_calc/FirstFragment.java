@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.dominikbitzer.pvl_calc.databinding.FragmentFirstBinding;
@@ -14,6 +15,7 @@ import com.dominikbitzer.pvl_calc.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+    private DataTransferViewModel myDataTransferViewModel;
 
     @Override
     public View onCreateView(
@@ -29,9 +31,13 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        myDataTransferViewModel = new ViewModelProvider(requireActivity()).get(DataTransferViewModel.class);
+
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                myDataTransferViewModel.scoreTeamA = "12";
+
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
