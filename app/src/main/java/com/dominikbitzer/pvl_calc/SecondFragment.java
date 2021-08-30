@@ -8,11 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
-import com.dominikbitzer.pvl_calc.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
 
@@ -35,7 +32,7 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         myDataTransferViewModel = new ViewModelProvider(requireActivity()).get(DataTransferViewModel.class);
-        showCountTextView.setText(myDataTransferViewModel.scoreTeamA);
+        showCountTextView.setText(myDataTransferViewModel.editTextsHashMap.toString());
 
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
