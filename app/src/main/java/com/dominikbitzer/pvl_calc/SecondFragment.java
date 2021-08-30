@@ -1,6 +1,7 @@
 package com.dominikbitzer.pvl_calc;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+
+import java.util.TreeMap;
+import java.util.Map;
 
 public class SecondFragment extends Fragment {
 
@@ -32,7 +36,7 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         myDataTransferViewModel = new ViewModelProvider(requireActivity()).get(DataTransferViewModel.class);
-        showCountTextView.setText(myDataTransferViewModel.editTextsHashMap.toString());
+        showMyData(myDataTransferViewModel.editTextsTreeMap);
 
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +51,19 @@ public class SecondFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
 //        binding = null;
+    }
+
+    public void showMyData(TreeMap<Integer, Integer> myTreeMap) {
+
+        StringBuilder prettyPrinted = new StringBuilder();
+
+        for (Map.Entry<Integer, Integer> loopedEntry:myTreeMap.entrySet()) {
+            prettyPrinted.append(getResources().getResourceEntryName(loopedEntry.getKey()) + "  " + loopedEntry.getValue()+"\n");
+        }
+
+//        myTreeMap.forEach((k,v) -> Log.e(k.toString(),v.toString()));
+
+        showCountTextView.setText(prettyPrinted);
     }
 
 }
