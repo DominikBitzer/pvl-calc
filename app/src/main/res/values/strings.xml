@@ -25,4 +25,6 @@
     <string name="hint_4a_diastolic_bloodpressure"><font size="14">SBP \n(mmHg)</font></string>
     <string name="hint_4b_diastolic_bloodpressure"><font size="14">DBP \n(mmHg)</font></string>
     <string name="hint_5_heartrate">(bpm)</string>
+    <string name="editText_not_filled_out">Please enter a value.</string>
+    <string name="snackbar_please_fill_all_fields">Please fill out all fields.</string>
 </resources>
