@@ -20,9 +20,9 @@
 
     <string name="hint_1_preejection_period">(msec)</string>
     <string name="hint_2_systolic_period">(msec)</string>
-    <string name="hint_3a_end_diastolic_volume">End-dia.</string>
-    <string name="hint_3b_end_diastolic_volume">End-sys.</string>
-    <string name="hint_4a_diastolic_bloodpressure">SBP (mmHg)</string>
-    <string name="hint_4b_diastolic_bloodpressure">DBP (mmHg)</string>
+    <string name="hint_3a_end_diastolic_volume"><font size="14">End-dia.</font></string>
+    <string name="hint_3b_end_diastolic_volume"><font size="14">End-sys.</font></string>
+    <string name="hint_4a_diastolic_bloodpressure"><font size="14">SBP \n(mmHg)</font></string>
+    <string name="hint_4b_diastolic_bloodpressure"><font size="14">DBP \n(mmHg)</font></string>
     <string name="hint_5_heartrate">(bpm)</string>
 </resources>
