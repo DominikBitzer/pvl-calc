@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.androidplot.xy.XYPlot;
+
 import java.util.TreeMap;
 import java.util.Map;
 
@@ -18,7 +20,8 @@ public class SecondFragment extends Fragment {
     private DataTransferViewModel myDataTransferViewModel;
     TextView showInputParametersTextView;
     TextView showCalculatedResultsTextView;
-    TextView showResult1;
+    TextView showResult1TextView;
+    private XYPlot heartPlotView;
 
     @Override
     public View onCreateView(
@@ -29,7 +32,9 @@ public class SecondFragment extends Fragment {
         View fragmentSecondLayout = inflater.inflate(R.layout.fragment_second, container, false);
         showInputParametersTextView = fragmentSecondLayout.findViewById(R.id.textview_second_fragment_input_parameters);
         showCalculatedResultsTextView = fragmentSecondLayout.findViewById(R.id.textview_second_fragment_calculated_results);
-        showResult1 = fragmentSecondLayout.findViewById(R.id.result_1_sum_bpm_and_volume);
+        showResult1TextView = fragmentSecondLayout.findViewById(R.id.result_1_sum_bpm_and_volume);
+
+        heartPlotView = (XYPlot) fragmentSecondLayout.findViewById(R.id.my_heart_flow_plot);
 
         return fragmentSecondLayout;
     }
@@ -38,13 +43,16 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         myDataTransferViewModel = new ViewModelProvider(requireActivity()).get(DataTransferViewModel.class);
+        TreeMap<String, Float> myCalculatedResults = calculateResults(myDataTransferViewModel.editTextsTreeMap);
 
         showInputParametersTextView.setText(
                 prettyPrintTreeMap(myDataTransferViewModel.editTextsTreeMap)
                         // Add a label in front of the results
                         .insert(0, "Input-parameters:\n"));
 
-        showResult1.setText(calculateResults(myDataTransferViewModel.editTextsTreeMap).toString().replace(",", "\n"));
+        showResult1TextView.setText("Calculated hear flow results: \n" + myCalculatedResults.toString().replace(",", "\n"));
+
+        HeartFlowGraphCreator.setGraph(myCalculatedResults, heartPlotView, this.getContext());
 
 /* Deactivated button
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {

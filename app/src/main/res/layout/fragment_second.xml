@@ -33,7 +33,7 @@
         android:id="@+id/textview_second_fragment_calculated_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Results"
+        android:text="Some more text"
         app:layout_constraintBottom_toTopOf="@+id/result_1_sum_bpm_and_volume"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,10 +44,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textview_result1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/my_heart_flow_plot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_second_fragment_calculated_results" />
 
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/my_heart_flow_plot"
+        style="@style/APDefacto.Dark"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        app:domainTitle="Time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_1_sum_bpm_and_volume"
+        app:lineLabelRotationBottom="-45"
+        app:lineLabels="left|bottom"
+        app:rangeTitle="Heart flow"
+        app:title="Heart flow diagram" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
