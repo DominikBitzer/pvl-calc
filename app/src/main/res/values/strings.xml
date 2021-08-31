@@ -27,4 +27,5 @@
     <string name="hint_5_heartrate">(bpm)</string>
     <string name="editText_not_filled_out">Please enter a value.</string>
     <string name="snackbar_please_fill_all_fields">Please fill out all fields.</string>
+    <string name="textview_result1">Value of first result</string>
 </resources>

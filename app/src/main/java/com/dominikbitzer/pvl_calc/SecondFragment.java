@@ -1,7 +1,6 @@
 package com.dominikbitzer.pvl_calc;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.fragment.NavHostFragment;
 
 import java.util.TreeMap;
 import java.util.Map;
@@ -18,7 +16,9 @@ import java.util.Map;
 public class SecondFragment extends Fragment {
 
     private DataTransferViewModel myDataTransferViewModel;
-    TextView showCountTextView;
+    TextView showInputParametersTextView;
+    TextView showCalculatedResultsTextView;
+    TextView showResult1;
 
     @Override
     public View onCreateView(
@@ -27,7 +27,9 @@ public class SecondFragment extends Fragment {
     ) {
 
         View fragmentSecondLayout = inflater.inflate(R.layout.fragment_second, container, false);
-        showCountTextView = fragmentSecondLayout.findViewById(R.id.textview_second);
+        showInputParametersTextView = fragmentSecondLayout.findViewById(R.id.textview_second_fragment_input_parameters);
+        showCalculatedResultsTextView = fragmentSecondLayout.findViewById(R.id.textview_second_fragment_calculated_results);
+        showResult1 = fragmentSecondLayout.findViewById(R.id.result_1_sum_bpm_and_volume);
 
         return fragmentSecondLayout;
     }
@@ -36,8 +38,15 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         myDataTransferViewModel = new ViewModelProvider(requireActivity()).get(DataTransferViewModel.class);
-        showMyData(myDataTransferViewModel.editTextsTreeMap);
 
+        showInputParametersTextView.setText(
+                prettyPrintTreeMap(myDataTransferViewModel.editTextsTreeMap)
+                        // Add a label in front of the results
+                        .insert(0, "Input-parameters:\n"));
+
+        showResult1.setText(calculateResults(myDataTransferViewModel.editTextsTreeMap).toString().replace(",", "\n"));
+
+/* Deactivated button
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +54,7 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
+*/
     }
 
     @Override
@@ -53,17 +63,38 @@ public class SecondFragment extends Fragment {
 //        binding = null;
     }
 
-    public void showMyData(TreeMap<Integer, Integer> myTreeMap) {
+    public TreeMap<String, Float> calculateResults(TreeMap<Integer, Integer> myTreeMap) {
+        TreeMap<String, Float> calculatedResults = new TreeMap<>();
+        calculatedResults.put("E_Nd(avg)",
+                (float)myTreeMap.get(R.id.input_1_preejection_period));
+        calculatedResults.put("E_Nd(est)",
+                (float)myTreeMap.get(R.id.input_2_systolic_period));
+        calculatedResults.put("E_es(eb)",
+                (float)myTreeMap.get(R.id.input_3a_end_diastolic_volume));
+        return calculatedResults;
+    }
+
+/* Alternative implementation for matching results with field IDs
+    public TreeMap<Integer, Integer> calculateResults_alt2(TreeMap<Integer, Integer> myTreeMap) {
+        TreeMap<Integer, Integer> calculatedResults = new TreeMap<>();
+        calculatedResults.put(R.id.result_1_sum_bpm_and_volume,
+                myTreeMap.get(R.id.input_1_preejection_period)
+        );
+        return calculatedResults;
+    }
+*/
+
+    public StringBuilder prettyPrintTreeMap(TreeMap<Integer, Integer> myTreeMap) {
 
         StringBuilder prettyPrinted = new StringBuilder();
 
         for (Map.Entry<Integer, Integer> loopedEntry:myTreeMap.entrySet()) {
-            prettyPrinted.append(getResources().getResourceEntryName(loopedEntry.getKey()) + "  " + loopedEntry.getValue()+"\n");
+            prettyPrinted
+                    .append(getResources().getResourceEntryName(loopedEntry.getKey())).append("\t   ")
+                    .append(loopedEntry.getValue()).append("\n");
         }
 
-//        myTreeMap.forEach((k,v) -> Log.e(k.toString(),v.toString()));
-
-        showCountTextView.setText(prettyPrinted);
+        return prettyPrinted;
     }
 
 }

@@ -7,16 +7,17 @@
     tools:context=".SecondFragment">
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/textview_second_fragment_input_parameters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="non-altered text"
+        android:text="Inputs"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+        app:layout_constraintBottom_toTopOf="@id/textview_second_fragment_calculated_results"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!-- Deactivated button
     <Button
         android:id="@+id/button_second"
         android:layout_width="wrap_content"
@@ -25,5 +26,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@id/textview_second_fragment_input_parameters" />
+-->
+
+    <TextView
+        android:id="@+id/textview_second_fragment_calculated_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results"
+        app:layout_constraintBottom_toTopOf="@+id/result_1_sum_bpm_and_volume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_second_fragment_input_parameters" />
+
+    <TextView
+        android:id="@+id/result_1_sum_bpm_and_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview_result1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_second_fragment_calculated_results" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
