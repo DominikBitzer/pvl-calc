@@ -63,11 +63,11 @@
         android:ems="7"
         android:hint="@string/hint_2_systolic_period"
         android:inputType="number"
-        android:nextFocusRight="@+id/input_3a_end_diastolic_volume"
-        android:nextFocusDown="@+id/input_3a_end_diastolic_volume"
-        android:nextFocusForward="@+id/input_3a_end_diastolic_volume"
+        android:nextFocusRight="@+id/input_3a_end_systolic_volume"
+        android:nextFocusDown="@+id/input_3a_end_systolic_volume"
+        android:nextFocusForward="@+id/input_3a_end_systolic_volume"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/input_3a_end_diastolic_volume"
+        app:layout_constraintBottom_toTopOf="@+id/input_3a_end_systolic_volume"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_1_preejection_period" />
@@ -85,70 +85,94 @@
 
 
     <EditText
-        android:id="@+id/input_3a_end_diastolic_volume"
+        android:id="@+id/input_3a_end_systolic_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="3"
-        android:hint="@string/hint_3a_end_diastolic_volume"
+        android:ems="7"
+        android:hint="@string/hint_3a_end_systolic_volume"
         android:inputType="number"
         android:nextFocusRight="@+id/input_3b_end_diastolic_volume"
         android:nextFocusDown="@+id/input_3b_end_diastolic_volume"
         android:nextFocusForward="@+id/input_3b_end_diastolic_volume"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/input_4a_diastolic_bloodpressure"
-        app:layout_constraintEnd_toStartOf="@+id/input_3b_end_diastolic_volume"
+        app:layout_constraintBottom_toTopOf="@+id/input_3b_end_diastolic_volume"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_2_systolic_period" />
+
+    <TextView
+        android:id="@+id/textview_3a_end_systolic_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview_3a_end_systolic_volume"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/input_3a_end_systolic_volume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/input_3a_end_systolic_volume" />
+
 
     <EditText
         android:id="@+id/input_3b_end_diastolic_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="3"
+        android:ems="7"
         android:hint="@string/hint_3b_end_diastolic_volume"
         android:inputType="number"
-        android:nextFocusRight="@+id/input_4a_diastolic_bloodpressure"
-        android:nextFocusDown="@+id/input_4a_diastolic_bloodpressure"
-        android:nextFocusForward="@+id/input_4a_diastolic_bloodpressure"
+        android:nextFocusRight="@+id/input_4a_systolic_bloodpressure"
+        android:nextFocusDown="@+id/input_4a_systolic_bloodpressure"
+        android:nextFocusForward="@+id/input_4a_systolic_bloodpressure"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/input_4a_diastolic_bloodpressure"
+        app:layout_constraintBottom_toTopOf="@+id/input_4a_systolic_bloodpressure"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toEndOf="@+id/input_3a_end_diastolic_volume"
-        app:layout_constraintTop_toBottomOf="@+id/input_2_systolic_period" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_3a_end_systolic_volume" />
 
     <TextView
-        android:id="@+id/textview_3ab_end_diastolic_volume"
+        android:id="@+id/textview_3b_end_diastolic_volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textview_3_end_diastolic_volume"
+        android:text="@string/textview_3b_end_diastolic_volume"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/input_3a_end_diastolic_volume"
+        app:layout_constraintBottom_toBottomOf="@+id/input_3b_end_diastolic_volume"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/input_3a_end_diastolic_volume" />
+        app:layout_constraintTop_toTopOf="@+id/input_3b_end_diastolic_volume" />
 
 
     <EditText
-        android:id="@+id/input_4a_diastolic_bloodpressure"
+        android:id="@+id/input_4a_systolic_bloodpressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="3"
-        android:hint="@string/hint_4a_diastolic_bloodpressure"
+        android:ems="7"
+        android:hint="@string/hint_4a_systolic_bloodpressure"
         android:inputType="number"
         android:nextFocusRight="@+id/input_4b_diastolic_bloodpressure"
         android:nextFocusDown="@+id/input_4b_diastolic_bloodpressure"
         android:nextFocusForward="@+id/input_4b_diastolic_bloodpressure"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/input_5_heartrate"
-        app:layout_constraintEnd_toStartOf="@+id/input_4b_diastolic_bloodpressure"
+        app:layout_constraintBottom_toTopOf="@+id/input_4b_diastolic_bloodpressure"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_3a_end_diastolic_volume" />
+        app:layout_constraintTop_toBottomOf="@+id/input_3b_end_diastolic_volume" />
+
+    <TextView
+        android:id="@+id/textview_4a_systolic_bloodpressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview_4a_systolic_bloodpressure"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/input_4a_systolic_bloodpressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/input_4a_systolic_bloodpressure" />
+
 
     <EditText
         android:id="@+id/input_4b_diastolic_bloodpressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="3"
+        android:ems="7"
         android:hint="@string/hint_4b_diastolic_bloodpressure"
         android:inputType="number"
         android:nextFocusRight="@+id/input_5_heartrate"
@@ -157,19 +181,19 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/input_5_heartrate"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toEndOf="@+id/input_4a_diastolic_bloodpressure"
-        app:layout_constraintTop_toBottomOf="@+id/input_3a_end_diastolic_volume" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_4a_systolic_bloodpressure" />
 
     <TextView
-        android:id="@+id/textview_4ab_diastolic_bloodpressure"
+        android:id="@+id/textview_4b_diastolic_bloodpressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textview_4_diastolic_bloodpressure"
+        android:text="@string/textview_4b_diastolic_bloodpressure"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/input_4a_diastolic_bloodpressure"
+        app:layout_constraintBottom_toBottomOf="@+id/input_4b_diastolic_bloodpressure"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/input_4a_diastolic_bloodpressure" />
+        app:layout_constraintTop_toTopOf="@+id/input_4b_diastolic_bloodpressure" />
 
 
     <EditText
@@ -183,7 +207,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_first"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_4a_diastolic_bloodpressure" />
+        app:layout_constraintTop_toBottomOf="@+id/input_4b_diastolic_bloodpressure" />
 
     <TextView
         android:id="@+id/textview_5_heartrate"

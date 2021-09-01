@@ -78,7 +78,7 @@ public class SecondFragment extends Fragment {
         calculatedResults.put("E_Nd(est)",
                 (float)myTreeMap.get(R.id.input_2_systolic_period));
         calculatedResults.put("E_es(eb)",
-                (float)myTreeMap.get(R.id.input_3a_end_diastolic_volume));
+                (float)myTreeMap.get(R.id.input_3a_end_systolic_volume));
         return calculatedResults;
     }
 
